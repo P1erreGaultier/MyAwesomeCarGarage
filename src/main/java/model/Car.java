@@ -1,16 +1,20 @@
 package model;
 
-public class Car {
-    private String color;
-    private String brand;
-    private double nbKm;
-    private Motor motor;
+import java.util.Objects;
 
-    public Car(String color, String brand, int nbKm, Motor motor) {
+public final class Car {
+    private final String color;
+    private final String brand;
+    private final double nbKm;
+    private final Motor motor;
+
+    public Car(String color, String brand, double nbKm, Motor motor) {
         this.color = color;
         this.brand = brand;
         this.nbKm = nbKm;
-        this.motor = motor;
+        // On valide à la création qu'on a bien un moteur
+        // Comme l'objet est immutable, on est toujours sur que le modele est consistant
+        this.motor = Objects.requireNonNull(motor, "motor is mandatory");
     }
 
     @Override
@@ -39,19 +43,4 @@ public class Car {
         return motor;
     }
 
-    public void setColor(String color) {
-        this.color = color;
-    }
-
-    public void setBrand(String brand) {
-        this.brand = brand;
-    }
-
-    public void setNbKm(double nbKm) {
-        this.nbKm = nbKm;
-    }
-
-    public void setMotor(Motor motor) {
-        this.motor = motor;
-    }
 }

@@ -11,14 +11,8 @@ public class main {
         // On a une twingo rouge avec un petit moteur
         Car maTwingo = new Car("Rouge","Renault",70000,new Motor(120d,12d));
 
-        // On peint la voiture
-        garage.paint(maTwingo,"bleu");
-
-        // On prepare la voiture avant les travaux sur le moteur
-        garage.prepareCarToBeRepaired(maTwingo);
-
-        // On remplace le moteur par un nouveau
-        garage.replaceMotor(maTwingo,180d,18d);
+        // utilisation du garage
+        maTwingo = garage.paintAndReplaceMotor(maTwingo,"bleu",180d,12d);
 
         // On veut une twingo bleu avec un gros moteur
         System.out.println(maTwingo);
