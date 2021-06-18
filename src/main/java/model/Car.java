@@ -1,6 +1,7 @@
 package model;
 
 import java.util.Objects;
+import java.util.function.UnaryOperator;
 
 public final class Car {
     private final String color;
@@ -41,6 +42,10 @@ public final class Car {
 
     public Motor getMotor() {
         return motor;
+    }
+
+    public Car mutate(UnaryOperator<Car> mutation){
+        return mutation.apply(this);
     }
 
 }
