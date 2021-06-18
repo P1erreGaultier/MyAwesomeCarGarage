@@ -1,3 +1,7 @@
+package service;
+
+import model.Car;
+
 public class CarService {
 
 

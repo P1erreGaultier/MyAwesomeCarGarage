@@ -1,3 +1,5 @@
+package model;
+
 public class Motor {
 
     private double size;
@@ -10,7 +12,7 @@ public class Motor {
 
     @Override
     public String toString() {
-        return "Motor{" +
+        return "model.Motor{" +
                 "size=" + size +
                 ", power=" + power +
                 '}';
